@@ -1,6 +1,6 @@
 package com.food.ordering.system.order.domain.port.out;
 
-import com.food.ordering.system.shared.domain.DomainEvent;
+import com.food.ordering.system.shared.domain.event.DomainEvent;
 
 /**
  * Outbound Port (Secondary / Driven).

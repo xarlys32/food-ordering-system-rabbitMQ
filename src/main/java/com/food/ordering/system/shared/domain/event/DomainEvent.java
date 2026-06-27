@@ -1,4 +1,4 @@
-package com.food.ordering.system.shared.domain;
+package com.food.ordering.system.shared.domain.event;
 
 import java.time.Instant;
 import java.util.UUID;

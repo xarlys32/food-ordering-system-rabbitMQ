@@ -4,7 +4,7 @@ import com.food.ordering.system.order.domain.event.OrderCreatedEvent;
 import com.food.ordering.system.order.domain.exception.OrderDomainException;
 import com.food.ordering.system.order.domain.model.valueobject.OrderId;
 import com.food.ordering.system.order.domain.model.valueobject.OrderStatus;
-import com.food.ordering.system.shared.domain.AggregateRoot;
+import com.food.ordering.system.shared.domain.model.AggregateRoot;
 
 import java.math.BigDecimal;
 import java.time.Instant;

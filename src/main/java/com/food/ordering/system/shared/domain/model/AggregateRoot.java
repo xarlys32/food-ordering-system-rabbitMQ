@@ -1,4 +1,6 @@
-package com.food.ordering.system.shared.domain;
+package com.food.ordering.system.shared.domain.model;
+
+import com.food.ordering.system.shared.domain.event.DomainEvent;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -3,7 +3,7 @@ package com.food.ordering.system.order.infrastructure.messaging.producer;
 import com.food.ordering.system.order.domain.event.OrderCreatedEvent;
 import com.food.ordering.system.order.domain.port.out.OrderEventPublisherPort;
 import com.food.ordering.system.order.infrastructure.messaging.event.OrderCreatedKafkaEvent;
-import com.food.ordering.system.shared.domain.DomainEvent;
+import com.food.ordering.system.shared.domain.event.DomainEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;

@@ -1,6 +1,6 @@
 package com.food.ordering.system.order.domain.model.valueobject;
 
-import com.food.ordering.system.shared.domain.ValueObject;
+import com.food.ordering.system.shared.domain.valueobject.ValueObject;
 
 import java.util.Objects;
 import java.util.UUID;

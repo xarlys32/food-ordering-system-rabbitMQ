@@ -7,7 +7,7 @@ import com.food.ordering.system.order.domain.model.Order;
 import com.food.ordering.system.order.domain.port.out.OrderEventPublisherPort;
 import com.food.ordering.system.order.domain.port.out.OrderRepositoryPort;
 import com.food.ordering.system.shared.application.cqrs.CommandHandler;
-import com.food.ordering.system.shared.domain.DomainEvent;
+import com.food.ordering.system.shared.domain.event.DomainEvent;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 

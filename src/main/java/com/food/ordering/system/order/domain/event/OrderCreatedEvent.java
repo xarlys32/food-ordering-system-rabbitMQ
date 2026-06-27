@@ -1,7 +1,7 @@
 package com.food.ordering.system.order.domain.event;
 
 import com.food.ordering.system.order.domain.model.valueobject.OrderId;
-import com.food.ordering.system.shared.domain.DomainEvent;
+import com.food.ordering.system.shared.domain.event.DomainEvent;
 
 import java.math.BigDecimal;
 
