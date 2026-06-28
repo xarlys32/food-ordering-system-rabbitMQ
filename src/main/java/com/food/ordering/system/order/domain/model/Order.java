@@ -5,6 +5,7 @@ import com.food.ordering.system.order.domain.exception.OrderDomainException;
 import com.food.ordering.system.order.domain.model.valueobject.OrderId;
 import com.food.ordering.system.order.domain.model.valueobject.OrderStatus;
 import com.food.ordering.system.shared.domain.model.AggregateRoot;
+import com.food.ordering.system.shared.domain.valueobject.CustomerId;
 
 import java.math.BigDecimal;
 import java.time.Instant;
@@ -17,13 +18,13 @@ import java.util.Objects;
 public class Order extends AggregateRoot {
 
     private final OrderId id;
-    private final String customerId;
+    private final CustomerId customerId;
     private BigDecimal totalAmount;
     private OrderStatus status;
     private final Instant createdAt;
     private Instant updatedAt;
 
-    private Order(OrderId id, String customerId, BigDecimal totalAmount) {
+    private Order(OrderId id, CustomerId customerId, BigDecimal totalAmount) {
         this.id = id;
         this.customerId = customerId;
         this.totalAmount = totalAmount;
@@ -32,7 +33,7 @@ public class Order extends AggregateRoot {
         this.updatedAt = this.createdAt;
     }
 
-    private Order(OrderId id, String customerId, BigDecimal totalAmount,
+    private Order(OrderId id, CustomerId customerId, BigDecimal totalAmount,
                   OrderStatus status, Instant createdAt, Instant updatedAt) {
         this.id = Objects.requireNonNull(id);
         this.customerId = Objects.requireNonNull(customerId);
@@ -46,7 +47,7 @@ public class Order extends AggregateRoot {
      * Reconstitutes an Order from its persisted state (used by the infrastructure mapper).
      * Does NOT register domain events.
      */
-    public static Order reconstitute(OrderId id, String customerId, BigDecimal totalAmount,
+    public static Order reconstitute(OrderId id, CustomerId customerId, BigDecimal totalAmount,
                                      OrderStatus status, Instant createdAt, Instant updatedAt) {
         return new Order(id, customerId, totalAmount, status, createdAt, updatedAt);
     }
@@ -54,8 +55,8 @@ public class Order extends AggregateRoot {
     /**
      * Factory method: creates a new Order and registers the corresponding domain event.
      */
-    public static Order create(String customerId, BigDecimal totalAmount) {
-        if (customerId == null || customerId.isBlank()) {
+    public static Order create(CustomerId customerId, BigDecimal totalAmount) {
+        if (customerId == null) {
             throw new OrderDomainException("Customer ID must not be blank");
         }
         if (totalAmount == null || totalAmount.compareTo(BigDecimal.ZERO) <= 0) {
@@ -86,7 +87,7 @@ public class Order extends AggregateRoot {
     // ── Getters ──────────────────────────────────────────────────────────────
 
     public OrderId getId() { return id; }
-    public String getCustomerId() { return customerId; }
+    public CustomerId getCustomerId() { return customerId; }
     public BigDecimal getTotalAmount() { return totalAmount; }
     public OrderStatus getStatus() { return status; }
     public Instant getCreatedAt() { return createdAt; }
