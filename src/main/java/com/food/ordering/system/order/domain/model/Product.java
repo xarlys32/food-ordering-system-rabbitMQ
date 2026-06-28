@@ -1,4 +1,4 @@
 package com.food.ordering.system.order.domain.model;
 
-public class Customer {
+public class Product {
 }
